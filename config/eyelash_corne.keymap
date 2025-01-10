@@ -56,7 +56,7 @@
     behaviors {
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0"
+            label = "TAP_DANCE_0";
             display-name = "TAB/ESC tap dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_SPEED>
