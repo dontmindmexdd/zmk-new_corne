@@ -59,7 +59,7 @@
             label = "TAP_DANCE_0";
             display-name = "TAB/ESC tap dance";
             #binding-cells = <0>;
-            tapping-term-ms = <TAP_SPEED>
+            tapping-term-ms = <TAP_SPEED>;
             bindings = <&kp TAP>, <&kp ESC>;
         };
         td1: tap_dance_1 {
