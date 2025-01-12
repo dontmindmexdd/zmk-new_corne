@@ -36,7 +36,6 @@
 //      name        reference  key1 key2 
 #define TD_TAB      &td0    // TAB ESC
 #define TD_CAPLOCK  &td1    // LSHIFT CAPSLOCK 
-#define TD_SPC      &td2    // SPACE ENTER 
 #define TD_SLSH     &td3    // SLASH QMARK
 #define TD_QUOTE    &td4    // QUOTE DOUBLE_QUOTES
 #define TD_EQL      &td5    // EQUAL PLUS
@@ -67,13 +66,6 @@
             #binding-cells = <0>; 
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
-            }; 
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp SPACE>, <&kp ENTER>;
             }; 
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
@@ -284,7 +276,7 @@
    TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                             &kp UP                &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
    &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
   TD_SCLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X       &kp SPACE              &kp DOWN              &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
-                             TD_ALT  &mo 1 TD_SPC                   TD_SPC &mo 2 &kp RALT
+                             TD_ALT  &mo 1 &kp SPACE                   &kp ENTER &mo 2 &kp RALT
                         >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
