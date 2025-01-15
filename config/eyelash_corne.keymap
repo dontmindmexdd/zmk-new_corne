@@ -45,10 +45,7 @@
 #define TD_COMM     &td9    // COMMA LESS_THAN 
 #define TD_DOT      &td10   // PERIOD GREATER_THAN 
 #define TD_BACKF    &td11   // GRAVE TILDE
-#define TD_ALT      &td12   // LALT GUI
-#define TD_ARR      &td13   // Q AT (@)
 #define TD_ATCAT    &td14   // AT CARET 
-#define TD_TAW      &td15   // TAB LWIN
 #define TD_SCLOCK   &td16   // (S)LSHIFT CAPSLOCK (Sticky shift)
 
 / {
@@ -73,13 +70,6 @@
             #binding-cells = <0>; 
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp SLASH>, <&kp QMARK>;
-            }; 
-        td4: tap_dance_4 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_4"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
             }; 
         td5: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
@@ -131,33 +121,12 @@
             bindings = <&kp GRAVE>, <&kp TILDE>;
             };            
 
-        td12: tap_dance_12 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_12"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp LALT>, <&kp GUI>;
-            };
-        td13: tap_dance_13 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_13"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp Q>, <&kp AT>;
-            };
         td14: tap_dance_14 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_14"; 
             #binding-cells = <0>; 
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp AT>, <&kp CARET>;
-            };
-        td15: tap_dance_15 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_15"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp TAB>, <&kp LWIN>;
             };
         td16: tap_dance_16 {
             compatible = "zmk,behavior-tap-dance";
@@ -238,6 +207,34 @@
                 bindings = <&kp N8>,    <&kp EXCL>;
                 mods=<(MOD_LSFT|MOD_RSFT)>;
         };
+        mm_s_c: mod_morph_semicolon_colon {
+                compatible = "zmk,behavior-mod-morph";
+                label="SEMICOLON_COLON";
+                #binding-cells = <0>; 
+                bindings = <&kp SEMICOLON>, <&kp COLON>;
+                mods=<(MOD_LSFT|MOD_RSFT)>;
+        };
+        mm_c_lt: mod_morph_comma_less_than {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMA_LESS_THAN"; 
+            #binding-cells = <0>; 
+            bindings = <&kp COMMA>, <&kp LESS_THAN>;
+            mods=<(MOD_LSFT|MOD_RSFT)>;
+        }; 
+        mm_p_gt: mod_morph_period_greater_than {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PERIOD_GREATER_THAN"; 
+            #binding-cells = <0>; 
+            bindings = <&kp PERIOD>, <&kp GREATER_THAN>;
+            mods=<(MOD_LSFT|MOD_RSFT)>;
+        }; 
+        mm_sq_dq: mod_morph_single_quote_double_quote {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>; 
+            tapping-term-ms = <TAP_SPEED>; 
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+            mods=<(MOD_LSFT|MOD_RSFT)>;
+        }; 
     };
 
     rgb_encoder: rgb_encoder {
@@ -268,15 +265,15 @@
         default_layer {
             display-name = "dvorak";
             // -----------------------------------------------------------------------------------------
-// |TAB:ESC   | ; : | , < | . > |  P  |  Y  |         |  F  |  G  |  C  |  R  |  L  | BKSP |
-// | CTRL     |  A  |  O  |  E  |  U  |  I  |         |  D  |  H  |  T  |  N  |  S  |  DEL |
-// | LSFT:CAP |' "  | q @ | J   | K   |  X  |         |  B  |  M  |  W  |  V  |  Z  |  TAB |
-//                        | GUI | LWR | SPC |         | ENT | RSE  | ALT |
+// |    esc   | ; : | , < | . > |  p  |  y  |         |  f  |  g  |  c  |  r  |  l  | bksp |
+// |   ctrl   |  a  |  o  |  e  |  u  |  i  |         |  d  |  h  |  t  |  n  |  s  |  tab |
+// |   lsft   |' "  | q @ | j   | k   |  x  |         |  b  |  m  |  w  |  v  |  z  |  gui |
+//                        | alt | spc | lwr |         | rse | ent | alt |
             bindings = <
-TD_TAB     TD_SCLN   TD_COMM  TD_DOT  &kp P  &kp Y                          &kp UP                   &kp F  &kp G  &kp C  &kp R  &kp L  &kp BSPC
-&kp LCTRL  &kp A     &kp O    &kp E   &kp U  &kp I                &kp LEFT  &kp ENTER  &kp RIGHT     &kp D  &kp H  &kp T  &kp N  &kp S  &kp DEL
-TD_SCLOCK  TD_QUOTE  TD_ARR   &kp J   &kp K  &kp X     &kp SPACE            &kp DOWN                 &kp B  &kp M  &kp W  &kp V  &kp Z  TD_TAW
-                              TD_ALT  &mo 1  &kp SPACE                                             &kp ENTER &mo 2 &kp RALT
+&kp ESC     &mm_s_c   &mm_c_lt  &mm_p_gt  &kp P  &kp Y                          &kp UP                   &kp F  &kp G  &kp C  &kp R  &kp L  &kp BSPC
+&kp LCTRL  &kp A     &kp O    &kp E   &kp U  &kp I                &kp LEFT  &kp ENTER  &kp RIGHT     &kp D  &kp H  &kp T  &kp N  &kp S  &kp TAB
+&kp LSFT  &mm_sq_dq  &kp Q   &kp J   &kp K  &kp X     &kp SPACE            &kp DOWN                 &kp B  &kp M  &kp W  &kp V  &kp Z  &kp GUI
+                              &kp ALT  &kp SPACE &mo 1                                               &mo 2  &kp ENTER  &kp RALT
 >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
