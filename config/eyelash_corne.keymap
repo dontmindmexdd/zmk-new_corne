@@ -231,7 +231,7 @@
         mm_sq_dq: mod_morph_single_quote_double_quote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
+            label = "SINGLE_QUOTE_DOUBLE_QUOTE"; 
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         }; 
