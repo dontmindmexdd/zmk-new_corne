@@ -184,56 +184,56 @@
                 label="TWO_PAR";
                 #binding-cells = <0>; 
                 bindings = <&kp N2>,<&kp RPAR>;
-                mods=<(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         four_pl: four_plus {
                 compatible = "zmk,behavior-mod-morph";
                 label="FOUR_PLUS";
                 #binding-cells = <0>; 
                 bindings = <&kp N4>,<&kp PLUS>;
-                mods=<(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         six_rbkt: six_rbkt {
                 compatible = "zmk,behavior-mod-morph";
                 label="six_rbkt";
                 #binding-cells = <0>; 
                 bindings = <&kp N6>,<&kp RBKT>;
-                mods=<(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         eight_exlm: eight_exlm {
                 compatible = "zmk,behavior-mod-morph";
                 label="EIGHT_EXLM";
                 #binding-cells = <0>; 
                 bindings = <&kp N8>,    <&kp EXCL>;
-                mods=<(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         mm_s_c: mod_morph_semicolon_colon {
                 compatible = "zmk,behavior-mod-morph";
                 label="SEMICOLON_COLON";
                 #binding-cells = <0>; 
                 bindings = <&kp SEMICOLON>, <&kp COLON>;
-                mods=<(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         mm_c_lt: mod_morph_comma_less_than {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-mod-morph";
             label = "COMMA_LESS_THAN"; 
             #binding-cells = <0>; 
             bindings = <&kp COMMA>, <&kp LESS_THAN>;
-            mods=<(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         }; 
         mm_p_gt: mod_morph_period_greater_than {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-mod-morph";
             label = "PERIOD_GREATER_THAN"; 
             #binding-cells = <0>; 
             bindings = <&kp PERIOD>, <&kp GREATER_THAN>;
-            mods=<(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         }; 
         mm_sq_dq: mod_morph_single_quote_double_quote {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>; 
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
-            mods=<(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         }; 
     };
 
