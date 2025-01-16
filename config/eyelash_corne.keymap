@@ -263,7 +263,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "( ° ͜ʖ °)";
+            display-name = "base";
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
@@ -274,7 +274,7 @@
         };
 
         lower_layer {
-            display-name = "＼(￣▽￣)／";
+            display-name = "lwr";
 // -----------------------------------------------------------------------------------------
 // |  ESC   |  7   |  5  |  3  |  1  |  9  |            |  0  |  2  |  4  |  6  |  8  |      |
 // | F11    |  F1  |  F2 |  F3 |  F4 |  F5 |            | LFT | DWN |  UP | RGT |     |      |
@@ -290,7 +290,7 @@
         };
 
         raise_layer {
-            display-name = "( ╥ω╥ )";
+            display-name = "rse";
 // -----------------------------------------------------------------------------------------
 // |  ESC |  [  |  {  |  }  |  (  |  =  |       |  *  |  )  |  +  |  ]  |  !  | DEL  |
 // | CTRL |  ~  |  %  |  `  | / ? | @ ^ |       |     |     |     |     |     |      |
